@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Profile</title>
+</head>
+<body>
+    <header>
+        <center>
+            <h2>Welcome to My Profile 😊</h2>
+            <hr>
+        </center>
+    </header>
+    <fieldset>
+        <legend>
+            <h3>Enter Your Details</h3>
+        </legend>
+        <form method="POST">
+            <div>
+                <label for="pic">Profile Picture:</label>
+                <input type="text" name="pic" id="pic"
+                       placeholder="Enter image URL">
+            </div>
+            <br>
+            <div>
+                <label for="uname">Username:</label>
+                <input type="text" name="uname" id="uname"
+                       placeholder="Enter username">
+            </div>
+            <br>
+            <div>
+                <label for="email">Email:</label>
+                <input type="email" name="email" id="email"
+                       placeholder="Enter email">
+            </div>
+            <br>
+            <div>
+                <label for="skills">Skills:</label>
+                <input type="text" name="skills" id="skills"
+                       placeholder="e.g. Python, Java, HTML">
+           </div>
+            <br>
+            <div>
+                <label for="bio">Short Bio:</label>
+                <input type="text" name="bio" id="bio"
+                       placeholder="Tell something about yourself">
+            </div>
+            <br>
+            <div>
+                <label for="Hob">Hobbies:</label>
+                <input type="text" name="Hob" id="Hob"
+                       placeholder="e.g. Reading, Music">
+            </div>
+
+            <br>
+            <div>
+                <label for="dates">Date:</label>
+                <input type="date" name="dates" id="dates">
+            </div>
+
+            <br>
+            <button type="submit">Submit</button>
+
+        </form>
+    </fieldset>
+    <fieldset>
+        <section>            
+            <h2>My Profile</h2>            
+            {% if data %}            
+            <hr>            
+            <div>
+                <h3>Profile Picture</h3>               
+                <img src="{{ data['pic'] }}"
+                alt="Profile Picture"
+                width="220">
+            </div>           
+            <br>
+            <div>
+                <p>
+                    <strong>Username:</strong>
+                    {{ data['uname'] }} </p>
+
+                <p>
+                    <strong>Email:</strong>
+                    {{ data['email'] }}
+                </p>
+
+                <p>
+                    <strong>Skills:</strong>
+                    {{ data['skills'] }}
+                </p>
+
+                <p>
+                    <strong>Short Bio:</strong>
+                    {{ data['bio'] }}
+                    
+                </p>
+                <p>
+                    <strong>Hobbies:</strong>
+                    {{ data['Hob'] }}
+                </p>
+
+                <p>
+                    <strong>Date:</strong>
+                    {{ data['dates'] }}
+                </p>
+                
+            </div>
+            
+            {% endif %}
+            
+        </fieldset>
+    </section>
+
+</body>
+
+</html>
